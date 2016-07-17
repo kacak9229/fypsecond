@@ -1,0 +1,21 @@
+<% layout('studentLayout') %>
+
+<h2>Join any Course</h2>
+<% for (var i = 0; i < courses.length; i++) { %>
+<div class="col-md-4" id="course">
+
+  <div class="card">
+    <div class="header">
+      <h4 class="title"><%= courses[i].name %></h4>
+    </div>
+    <div class="content">
+      <p class="category">
+        <%= courses[i].description %>
+      </p>
+      <br />
+      <a href= "/student/courses/<%= courses[i]._id %>" class="btn btn-primary">Details</a>
+    </div>
+  </div>
+
+</div>
+<% } %>

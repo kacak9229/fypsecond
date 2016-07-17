@@ -1,0 +1,59 @@
+<div class="sidebar" data-color="purple" data-image="/images/sidebar-5.jpg">
+
+<!--
+
+    Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+    Tip 2: you can also add an image using data-image tag
+
+-->
+
+  <div class="sidebar-wrapper">
+        <div class="logo">
+               <a href="/student/dashboard"> Xkyler </a>
+            </a>
+        </div>
+
+        <div class="profile">
+          <div class="profile_pic">
+            <img src="<%= user.profile.picture %>" alt="..." class="img-circle profile_img" style="width: 60%; margin-left: 20%; margin-top: 5%">
+          </div>
+          <div class="profile_info">
+            <h2 class="text-center"><%= user.profile.name %></h2>
+          </div>
+        </div>
+
+        <ul class="nav">
+            <li class="active">
+                <a href="/student/dashboard">
+                    <i class="pe-7s-graph"></i>
+                    <p>Home</p>
+                </a>
+            </li>
+            <li>
+                <a href="/student/profile">
+                    <i class="pe-7s-user"></i>
+                    <p>Profile</p>
+                </a>
+            </li>
+            <li>
+                <a href="table.html">
+                    <i class="pe-7s-note2"></i>
+                    <p>Inbox</p>
+                </a>
+            </li>
+            <li>
+                <a href="/student/my-courses">
+                    <i class="pe-7s-news-paper"></i>
+                    <p>My Courses</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="/student/join-course">
+                    <i class="pe-7s-news-paper"></i>
+                    <p>Join a Course</p>
+                </a>
+            </li>
+        </ul>
+  </div>
+</div>

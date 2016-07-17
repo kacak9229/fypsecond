@@ -1,0 +1,32 @@
+<% layout('studentLayout') %>
+
+<h2>Join any Course</h2>
+
+<div class="col-md-12" id="course">
+
+  <div class="card">
+    <div class="header">
+      <h4 class="title"><%= course.name %></h4>
+    </div>
+    <div class="content">
+      <p class="category">
+        <%= course.description %>
+        <div class="row">
+          <div class="col-md-4">
+
+            <form role="form" method="post">
+
+              <div class="form-group">
+                <h5><b>Enter Course code given by your teacher:</b></h5>
+                <input class="form-control" name="code" id="code" placeholder="Example: 123456">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </p>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

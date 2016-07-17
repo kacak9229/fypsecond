@@ -1,0 +1,70 @@
+<% layout ('teacherLayout') %>
+<div class="row">
+  <div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Recent Activities </h2>
+
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (var i = 0; i < 8; i++) {%>
+            <tr>
+              <td>Naufal</td>
+              <td>Yahaya</td>
+              <td><a href="/" class="btn btn-primary">Message</a></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-8 col-sm-8 col-xs-12">
+
+
+
+    <div class="row">
+
+    </div>
+    <div class="row">
+
+
+      <!-- Start to do list -->
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>To Do List </h2>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+
+            <div class="">
+              <ul class="to_do">
+                <li>
+                  <p>
+                    <input type="checkbox" class="flat"> To do list </p>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End to do list -->
+
+      <!-- start of weather widget -->
+    </div>
+
+<% include ../teacherPartials/javascript %>

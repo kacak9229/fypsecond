@@ -1,0 +1,73 @@
+<% layout ('teacherLayout') %>
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Enrolled Students </h2>
+
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Name</th>
+              <th>Chat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (var i = 0; i < course.ownByStudent.length; i++) {%>
+            <tr>
+              <td><%= course.ownByStudent[i].user.email %></td>
+              <td><%= course.ownByStudent[i].user.profile.name %></td>
+              <td><a href="/message/<%= course.ownByStudent[i].user._id%>" class="btn btn-primary">Message</a></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-6 col-sm-6 col-xs-12">
+
+
+
+    <div class="row">
+
+    </div>
+    <div class="row">
+
+
+      <!-- Start to do list -->
+      <!-- <div class="col-md-6 col-sm-6 col-xs-12"> -->
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Lecture's Materials </h2>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Filename</th>
+                  <th>File's URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for (var i = 0; i < course.files.length; i++) {%>
+                <tr>
+                  <td><%= course.files[i].name %></td>
+                  <td><a href="<%= course.files[i].fileUrl %>" style="color: #3498db">url</a></td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+              <td><a href="/teacher/upload/<%= course._id %>" class="btn btn-success btn-lg">Upload a file</a></td>
+          </div>
+        </div>
+    </div>
+
+<% include ../teacherPartials/javascript %>

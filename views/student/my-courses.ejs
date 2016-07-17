@@ -1,0 +1,22 @@
+<% layout('studentLayout') %>
+
+<h2>My Courses</h2>
+<% for(var i = 0; i < foundUser.courses.length; i++) { %>
+<div class="col-md-4" id="course">
+
+  <div class="card">
+    <div class="header">
+      <h4 class="title"><%= foundUser.courses[i].course.name %></h4>
+    </div>
+    <div class="content">
+      <p class="category">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+      </p>
+      <br />
+      <a href="/student/my-courses/<%= foundUser.courses[i].course._id %>" class="btn btn-primary">Details</a>
+    </div>
+  </div>
+
+
+</div>
+<% } %>

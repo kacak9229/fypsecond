@@ -1,0 +1,40 @@
+<% layout('studentLayout') %>
+
+<div class="col-md-12">
+    <div class="card ">
+        <div class="header">
+            <h4 class="title"><%= course.name %></h4>
+            <p class="category"><%= course.description %></p>
+            <a href="/message/<%= course.ownByTeacher._id %>" type="button" rel="tooltip" title="Message" class="btn btn-primary btn-md">
+              Message your <%= course.ownByTeacher.profile.name %>
+            </a>
+        </div>
+        <div class="content">
+            <div class="table-full-width">
+                <table class="table">
+                    <tbody>
+                      <% for(var i = 0; i < course.files.length; i++) { %>
+                        <tr>
+                            <td>
+
+                            </td>
+                            <td>Lectures</td>
+                            <td class="td-actions ">
+                              <a href="<%= course.files[i].fileUrl %>">URL</a>
+                            </td>
+                        </tr>
+                        <% } %>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="footer">
+                <hr>
+                <div class="stats">
+                    <!-- <i class="fa fa-history"></i> Updated 3 minutes ago -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

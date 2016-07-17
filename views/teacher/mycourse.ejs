@@ -1,0 +1,62 @@
+<% layout('teacherLayout') %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="x_panel">
+      <div class="x_content">
+        <div class="row">
+
+      <div class="clearfix"></div>
+
+      <% for (var i = 0; i < foundUser.courses.length; i++) { %>
+      <div class="col-md-4 profile_details">
+        <div class="well profile_view">
+          <div class="col-sm-12">
+            <h4 class="brief"><i><%= foundUser.courses[i].course.name %></i></h4>
+            <div class="left col-xs-7">
+              <p><strong>About: </strong> <%= foundUser.courses[i].course.description %></p>
+              <ul class="list-unstyled">
+                <% if (typeof foundUser.courses[i].course.totalStudents == 'undefined')  {%>
+                  <li><i class="fa fa-building"></i>0</li>
+                <% } else { %>
+                  <li><i class="fa fa-building"></i><%= foundUser.courses[i].course.totalStudents %></li>
+                <% } %>
+
+              </ul>
+            </div>
+            <div class="right col-xs-5 text-center">
+            </div>
+          </div>
+          <div class="col-xs-12 bottom text-center">
+            <div class="col-xs-12 col-sm-6 emphasis">
+              <!-- <p class="ratings">
+                <a>4.0</a>
+                <a href="#"><span class="fa fa-star"></span></a>
+                <a href="#"><span class="fa fa-star"></span></a>
+                <a href="#"><span class="fa fa-star"></span></a>
+                <a href="#"><span class="fa fa-star"></span></a>
+                <a href="#"><span class="fa fa-star-o"></span></a>
+              </p> -->
+            </div>
+            <div class="col-xs-12 col-sm-6 emphasis">
+              <a href="/teacher/mycourse/<%= foundUser.courses[i].course._id %>"class="btn btn-primary btn-xs">
+                <i class="fa fa-user"> </i> Open Course
+                <!-- <a><span class="btn btn-primary btn-xs"></span></a> -->
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- /page content -->
+
+<!-- footer content -->
+
+<% include ../teacherPartials/javascript %>
