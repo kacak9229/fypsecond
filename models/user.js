@@ -16,6 +16,9 @@ var UserSchema = new Schema({
     name: { type: String, default: ''},
     picture: { type: String, default: ''}
   },
+  certificates: {
+    cert: { type: Schema.Types.ObjectId, ref: 'Certificate'},
+  },
   role: { type: String, lowercase: true },
   class: String,
   courses: [{

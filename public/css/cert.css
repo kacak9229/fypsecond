@@ -1,0 +1,140 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Your template name 
+    Template URI: http://qualitygurus.com
+    Description: This is html5 template
+    Author: Robitheme
+    Author URI: http://fiverr.com/robitheme
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+    
+    CSS INDEX
+    ===================
+	
+    1. Theme Default CSS (body, link color, section etc)
+
+-----------------------------------------------------------------------------------*/
+
+/*----------------------------------------*/
+/*  1.  Theme default CSS
+/*----------------------------------------*/
+html, body {height: 100%;}
+.floatleft {float:left}
+.floatright {float:right}
+.alignleft {float:left;margin-right:15px;margin-bottom: 15px}
+.alignright {float:right;margin-left:15px;margin-bottom: 15px}
+.aligncenter {display:block;margin:0 auto 15px}
+a:focus {outline:0px solid}
+img {max-width:100%;height:auto}
+.fix {overflow:hidden}
+p {margin:0 0 0px;}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 15px;
+}
+a {transition: all 0.3s ease 0s;text-decoration:none;}
+a:hover {
+  color: #666;
+  text-decoration: none;
+}
+a:active, a:hover {
+  outline: 0 none;
+}
+ul{
+	list-style: outside none none;
+	margin: 0;
+	padding: 0
+}
+
+.col-text-center{
+	float: none !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.displaytable {
+    display: table;
+    height: 100vh;
+    width: 100%;
+}
+.displaytablecell {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+}
+.clear{clear:both}
+body {
+  background: #fff;
+  color: #000;
+  font-family: Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight:400;
+}
+
+
+
+
+.main-content {
+    border: 1px solid #000;
+    margin: 50px 0;
+    outline: 4px solid #000;
+    outline-offset: 10px;
+    padding: 20px;
+    position: relative;
+}
+.main-content::after {
+    border: 3px solid #000;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: scale(0.96);
+    width: 100%;
+    z-index: -1;
+}
+
+
+.existing > a {
+    color: #333;
+    text-decoration: underline;
+}
+.existing {
+  margin-bottom: -90px;
+  margin-left: 10px;
+  position: relative;
+  text-align: left;
+  top: -105px;
+  width: 125px;
+}
+.existing > a:hover {
+    color: #666;
+}
+.main-content > p {
+    margin-bottom: 10px;
+}
+.main-content h3 {
+    margin-bottom: 15px;
+}
+
+
+.left.floatleft {
+  margin-left: 20px;
+  margin-top: 15px;
+}
+.left.floatleft a{
+  
+font-family: 'Sacramento', cursive;
+font-size:20px;
+}
+.veri.text-right > img {
+    left: -75px;
+    position: relative;
+    top: 24px;
+}
+.veri.text-right {
+    margin-right: 10px;
+    margin-top: 30px;
+}
+.main-content h1 {
+  font-size: 30px;
+}

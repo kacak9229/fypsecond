@@ -57,5 +57,21 @@ module.exports = function(app) {
     });
   });
 
+  app.post('/register/student', function(req, res) {
+
+    var user = new User();
+    user.email = req.body.email;
+    user.password = req.body.password;
+    user.role = req.body.role;
+    user.profile.name = req.body.name;
+    user.profile.picture = user.gravatar();
+
+    user.save(function(err) {
+      if (err) throw err;
+      res.json("success");
+    });
+  });
+
+
 
 }

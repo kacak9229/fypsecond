@@ -6,6 +6,7 @@ $(function() {
   var timeout;
 
 
+
   socket.on('course', function(data) {
     if (data) {
       var html = '';

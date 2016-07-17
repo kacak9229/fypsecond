@@ -1,0 +1,23 @@
+<% layout('studentLayout') %>
+
+<h2>My Certificates</h2>
+
+<% for(var i = 0; i < certs.length; i++) { %>
+<div class="col-md-4" id="course">
+
+  <div class="card">
+    <div class="header">
+      <h4 class="title">Certificate in <%= certs[i].course.name %></h4>
+    </div>
+    <div class="content">
+      <p class="category">
+
+      </p>
+      <br />
+      <a href="/student/single-certificate/<%= certs[i]._id %>" class="btn btn-success">See my certificate</a>
+    </div>
+  </div>
+
+
+</div>
+<% } %>

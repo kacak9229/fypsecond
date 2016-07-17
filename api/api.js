@@ -8,13 +8,14 @@ var s3Bucket = new AWS.S3();
 
 var passportConf = require('../passport');
 var Course = require('../models/course');
+var Certificate = require('../models/certificate');
+var User = require('../models/user');
 
 module.exports = function(app, s3fsImpl) {
 
   app.post('/api/teacher/upload/tos3', passportConf.requireRole('teacher'), function(req, res, next) {
     // exports.upload = function (req, res) {
     var file = req.files.file;
-    console.log(typeof file.name);
     var stream = fs.createReadStream(file.path);
     return s3fsImpl.writeFile(file.originalFilename, stream).then(function () {
       fs.unlink(file.path, function (err, cs) {
@@ -31,27 +32,55 @@ module.exports = function(app, s3fsImpl) {
             },
             function(url, callback) {
               Course.update(
-                  {
-                    _id: req.body.courseId,
-                    'files.fileUrl': { $ne: url }
-                  },
-                  {
-                    $push: { files: { fileUrl: url } },
-                  }, function(err, count) {
-                    if (err) return next(err);
-                    console.log('Successfully saved');
+                {
+                  _id: req.body.courseId,
+                  'files.fileUrl': { $ne: url }
+                },
+                {
+                  $push: { files: { fileUrl: url, name: file.name } },
+
+                }, {
+                  multi: true
+                },function(err, count) {
+                  if (err) return next(err);
+                  console.log('Successfully saved');
 
                 });
 
-            },
-          ]);
+              },
+            ]);
+          }
+        });
 
-
-        }
-        // Course
+        res.status(200).end();
       });
-      res.status(200).end();
-
     });
-  });
-}
+
+    app.post('/api/give-certificate', passportConf.requireRole('teacher'), function(req, res, next) {
+      async.waterfall([
+        function(callback) {
+          Certificate.findOne({ _id: req.body.userId}, function(err, user) {
+            if (user) {
+              res.json('Found user');
+            } else {
+              var userId = req.body.userId;
+              var cert = new Certificate();
+              cert.ownBy = userId;
+              cert.course = req.body.courseId;
+              cert.save(function(err, cert) {
+                callback(err, userId);
+              });
+            }
+          });
+        },
+        function(userId, callback) {
+          User.findOne({ _id: userId }, function(err, foundUser) {
+            if (foundUser) {
+              res.json("Successfully gave certificate to " + foundUser.profile.name);
+            }
+          });
+        }
+      ]);
+    });
+
+  }
