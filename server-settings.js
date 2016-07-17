@@ -120,7 +120,7 @@ app.use(multipartMiddleware);
 require('./api/api')(app, s3fsImpl);
 
 
-http.listen(3000, function(err) {
+http.listen(process.env.PORT || 3000, function(err) {
   if (err) {
     console.log('Error running express server');
   } else {
