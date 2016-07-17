@@ -1,6 +1,6 @@
 module.exports = {
-  // database: 'mongodb://root:abc123@ds031581.mlab.com:31581/fyp',
-  database: 'mongodb://localhost/fyp3',
+  database: 'mongodb://root:abc123@ds031581.mlab.com:31581/fyp',
+  // database: 'mongodb://localhost/fyp3',
   secret: "This is a SECRET19923123",
 
   facebook: {
